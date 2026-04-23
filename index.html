@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
@@ -29,243 +28,232 @@
       --max:860px;
     }
 
-```
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
 
-body{
-  margin:0;
-  font-family:-apple-system,BlinkMacSystemFont,"Hiragino Kaku Gothic ProN","Yu Gothic",Meiryo,sans-serif;
-  color:var(--text);
-  background:
-    radial-gradient(circle at top right, rgba(255,230,170,.55) 0%, rgba(255,230,170,0) 22%),
-    radial-gradient(circle at top left, rgba(120,190,255,.22) 0%, rgba(120,190,255,0) 28%),
-    linear-gradient(180deg, var(--bg-top) 0%, var(--bg-mid) 45%, var(--bg-bottom) 100%);
-  -webkit-font-smoothing:antialiased;
-  text-rendering:optimizeLegibility;
-  overflow-x:hidden;
-}
+    body{
+      margin:0;
+      font-family:-apple-system,BlinkMacSystemFont,"Hiragino Kaku Gothic ProN","Yu Gothic",Meiryo,sans-serif;
+      color:var(--text);
+      background:
+        radial-gradient(circle at top right, rgba(255,230,170,.55) 0%, rgba(255,230,170,0) 22%),
+        radial-gradient(circle at top left, rgba(120,190,255,.22) 0%, rgba(120,190,255,0) 28%),
+        linear-gradient(180deg, var(--bg-top) 0%, var(--bg-mid) 45%, var(--bg-bottom) 100%);
+      -webkit-font-smoothing:antialiased;
+      text-rendering:optimizeLegibility;
+      overflow-x:hidden;
+    }
 
-body::before{
-  content:"";
-  position:fixed;inset:0;pointer-events:none;
-  background:radial-gradient(circle at 50% 100%, rgba(255,255,255,.82) 0%, rgba(255,255,255,0) 34%);
-  z-index:0;
-}
+    body::before{
+      content:"";
+      position:fixed;inset:0;pointer-events:none;
+      background:radial-gradient(circle at 50% 100%, rgba(255,255,255,.82) 0%, rgba(255,255,255,0) 34%);
+      z-index:0;
+    }
 
-a{color:inherit}
-img{max-width:100%;height:auto;display:block;}
+    a{color:inherit}
+    img{max-width:100%;height:auto;display:block;}
 
-.page{
-  position:relative;z-index:1;
-  max-width:var(--max);margin:0 auto;
-}
+    .page{
+      position:relative;z-index:1;
+      max-width:var(--max);margin:0 auto;
+    }
 
-/* ── Banner: flush to topbar, full width ── */
-.hero-banner{
-  margin:0;
-  overflow:hidden;
-  border-radius:0;
-  background:#daeeff;
-}
-.hero-banner img{
-  width:100%;
-  height:auto;
-  min-height:220px;      /* 最低でも220px確保 */
-  max-height:360px;      /* 大きくなりすぎない上限 */
-  object-fit:cover;
-  object-position:center top;
-  display:block;
-}
+    /* ── Banner: flush to topbar, full width ── */
+    .hero-banner{
+      margin:0;
+      overflow:hidden;
+      border-radius:0;
+      background:#daeeff;
+    }
+    .hero-banner img{width:100%;height:auto;display:block;}
 
-/* ── Padded content area below banner ───── */
-.content{padding:12px 14px 0;}
+    /* ── Padded content area below banner ───── */
+    .content{padding:12px 14px 0;}
 
-/* ── Buttons ─────────────────────────────── */
-.btn,.cta{
-  display:inline-flex;align-items:center;justify-content:center;
-  text-decoration:none;border:none;cursor:pointer;
-  transition:.22s ease;font-weight:800;
-  min-height:52px;touch-action:manipulation;
-}
-.btn:hover,.cta:hover{transform:translateY(-1px)}
-.btn:focus,.cta:focus,a:focus{outline:3px solid rgba(47,103,200,.22);outline-offset:2px;}
+    /* ── Buttons ─────────────────────────────── */
+    .btn,.cta{
+      display:inline-flex;align-items:center;justify-content:center;
+      text-decoration:none;border:none;cursor:pointer;
+      transition:.22s ease;font-weight:800;
+      min-height:52px;touch-action:manipulation;
+    }
+    .btn:hover,.cta:hover{transform:translateY(-1px)}
+    .btn:focus,.cta:focus,a:focus{outline:3px solid rgba(47,103,200,.22);outline-offset:2px;}
 
-.btn-primary{
-  background:linear-gradient(135deg, var(--gold) 0%, var(--gold-deep) 100%);
-  color:#fff;padding:16px 20px;border-radius:16px;
-  box-shadow:0 14px 28px rgba(201,137,31,.22);font-size:16px;flex:1 1 220px;
-}
-.btn-secondary{
-  background:rgba(255,255,255,.82);color:var(--blue-deep);
-  padding:16px 20px;border-radius:16px;border:1px solid rgba(255,255,255,.6);
-  font-size:16px;box-shadow:var(--shadow-soft);backdrop-filter:blur(8px);flex:1 1 220px;
-}
+    .btn-primary{
+      background:linear-gradient(135deg, var(--gold) 0%, var(--gold-deep) 100%);
+      color:#fff;padding:16px 20px;border-radius:16px;
+      box-shadow:0 14px 28px rgba(201,137,31,.22);font-size:16px;flex:1 1 220px;
+    }
+    .btn-secondary{
+      background:rgba(255,255,255,.82);color:var(--blue-deep);
+      padding:16px 20px;border-radius:16px;border:1px solid rgba(255,255,255,.6);
+      font-size:16px;box-shadow:var(--shadow-soft);backdrop-filter:blur(8px);flex:1 1 220px;
+    }
 
-/* ── Hero card ───────────────────────────── */
-.hero{
-  position:relative;
-  background:linear-gradient(180deg, rgba(255,255,255,.82) 0%, rgba(255,255,255,.68) 100%);
-  backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);
-  border:1px solid rgba(255,255,255,.55);
-  border-radius:30px;padding:24px 16px;
-  box-shadow:var(--shadow);overflow:hidden;
-}
-.hero::before{
-  content:"";position:absolute;top:-30px;right:-30px;
-  width:180px;height:180px;border-radius:50%;
-  background:radial-gradient(circle,rgba(255,223,150,.55) 0%,rgba(255,223,150,0) 72%);
-  pointer-events:none;
-}
-.hero::after{
-  content:"";position:absolute;left:-40px;bottom:-50px;
-  width:220px;height:220px;border-radius:50%;
-  background:radial-gradient(circle,rgba(114,182,255,.18) 0%,rgba(114,182,255,0) 72%);
-  pointer-events:none;
-}
+    /* ── Hero card ───────────────────────────── */
+    .hero{
+      position:relative;
+      background:linear-gradient(180deg, rgba(255,255,255,.82) 0%, rgba(255,255,255,.68) 100%);
+      backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);
+      border:1px solid rgba(255,255,255,.55);
+      border-radius:30px;padding:24px 16px;
+      box-shadow:var(--shadow);overflow:hidden;
+    }
+    .hero::before{
+      content:"";position:absolute;top:-30px;right:-30px;
+      width:180px;height:180px;border-radius:50%;
+      background:radial-gradient(circle,rgba(255,223,150,.55) 0%,rgba(255,223,150,0) 72%);
+      pointer-events:none;
+    }
+    .hero::after{
+      content:"";position:absolute;left:-40px;bottom:-50px;
+      width:220px;height:220px;border-radius:50%;
+      background:radial-gradient(circle,rgba(114,182,255,.18) 0%,rgba(114,182,255,0) 72%);
+      pointer-events:none;
+    }
 
-.eyebrow{
-  display:inline-block;font-size:12px;letter-spacing:.08em;
-  color:var(--blue-deep);background:rgba(233,243,255,.9);
-  padding:7px 12px;border-radius:999px;margin-bottom:16px;
-  font-weight:700;border:1px solid rgba(47,103,200,.08);
-}
+    .eyebrow{
+      display:inline-block;font-size:12px;letter-spacing:.08em;
+      color:var(--blue-deep);background:rgba(233,243,255,.9);
+      padding:7px 12px;border-radius:999px;margin-bottom:16px;
+      font-weight:700;border:1px solid rgba(47,103,200,.08);
+    }
 
-h1{
-  font-size:clamp(28px,8vw,46px);line-height:1.4;margin:0 0 16px;
-  letter-spacing:-0.02em;color:#233756;text-shadow:0 1px 0 rgba(255,255,255,.7);
-}
-h2{font-size:20px;line-height:1.5;margin:0 0 14px;letter-spacing:-0.01em;color:#223454;}
-h3{font-size:16px;line-height:1.5;margin:0 0 8px;color:#29436c;}
-.lead{font-size:15px;line-height:1.95;margin:0 0 12px;}
-.muted{color:var(--muted)}
+    h1{
+      font-size:clamp(28px,8vw,46px);line-height:1.4;margin:0 0 16px;
+      letter-spacing:-0.02em;color:#233756;text-shadow:0 1px 0 rgba(255,255,255,.7);
+    }
+    h2{font-size:20px;line-height:1.5;margin:0 0 14px;letter-spacing:-0.01em;color:#223454;}
+    h3{font-size:16px;line-height:1.5;margin:0 0 8px;color:#29436c;}
+    .lead{font-size:15px;line-height:1.95;margin:0 0 12px;}
+    .muted{color:var(--muted)}
 
-.hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:22px;}
+    .hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:22px;}
 
-/* ── Sections ────────────────────────────── */
-.section{margin-top:16px}
+    /* ── Sections ────────────────────────────── */
+    .section{margin-top:16px}
 
-.panel{
-  background:var(--card);border:1px solid rgba(255,255,255,.58);
-  border-radius:var(--radius);padding:20px;
-  box-shadow:var(--shadow);backdrop-filter:blur(10px);
-}
+    .panel{
+      background:var(--card);border:1px solid rgba(255,255,255,.58);
+      border-radius:var(--radius);padding:20px;
+      box-shadow:var(--shadow);backdrop-filter:blur(10px);
+    }
 
-.grid-2,.grid-3{display:grid;gap:12px;}
-.grid-2{grid-template-columns:repeat(2,minmax(0,1fr))}
-.grid-3{grid-template-columns:repeat(3,minmax(0,1fr))}
+    .grid-2,.grid-3{display:grid;gap:12px;}
+    .grid-2{grid-template-columns:repeat(2,minmax(0,1fr))}
+    .grid-3{grid-template-columns:repeat(3,minmax(0,1fr))}
 
-.card{
-  background:var(--card-strong);border:1px solid rgba(255,255,255,.62);
-  border-radius:16px;padding:16px 14px;box-shadow:var(--shadow-soft);
-  line-height:1.8;font-size:15px;backdrop-filter:blur(8px);
-}
+    .card{
+      background:var(--card-strong);border:1px solid rgba(255,255,255,.62);
+      border-radius:16px;padding:16px 14px;box-shadow:var(--shadow-soft);
+      line-height:1.8;font-size:15px;backdrop-filter:blur(8px);
+    }
 
-.danger-box{
-  background:var(--danger-soft);border:1px solid rgba(230,162,60,.25);
-  border-radius:18px;padding:18px;box-shadow:var(--shadow-soft);
-}
-.danger-box ul,.list ul,.faq-item p,
-.step p,.profile p,.comparison p{margin:0;line-height:1.9;font-size:15px;}
-ul{margin:0;padding-left:1.2em;line-height:1.9;font-size:15px;}
-li{margin:8px 0}
+    .danger-box{
+      background:var(--danger-soft);border:1px solid rgba(230,162,60,.25);
+      border-radius:18px;padding:18px;box-shadow:var(--shadow-soft);
+    }
+    .danger-box ul,.list ul,.faq-item p,
+    .step p,.profile p,.comparison p{margin:0;line-height:1.9;font-size:15px;}
+    ul{margin:0;padding-left:1.2em;line-height:1.9;font-size:15px;}
+    li{margin:8px 0}
 
-.flow{display:grid;gap:12px;margin-top:14px}
-.step{
-  display:flex;gap:12px;align-items:flex-start;
-  background:rgba(255,255,255,.84);border:1px solid rgba(255,255,255,.62);
-  border-radius:16px;padding:14px;
-  box-shadow:var(--shadow-soft);backdrop-filter:blur(8px);
-}
-.num{
-  width:32px;height:32px;border-radius:999px;
-  background:linear-gradient(135deg,var(--gold-soft) 0%,#ffe7bb 100%);
-  color:var(--gold-deep);display:flex;align-items:center;justify-content:center;
-  font-weight:700;flex:0 0 auto;margin-top:1px;border:1px solid rgba(230,162,60,.15);
-}
+    .flow{display:grid;gap:12px;margin-top:14px}
+    .step{
+      display:flex;gap:12px;align-items:flex-start;
+      background:rgba(255,255,255,.84);border:1px solid rgba(255,255,255,.62);
+      border-radius:16px;padding:14px;
+      box-shadow:var(--shadow-soft);backdrop-filter:blur(8px);
+    }
+    .num{
+      width:32px;height:32px;border-radius:999px;
+      background:linear-gradient(135deg,var(--gold-soft) 0%,#ffe7bb 100%);
+      color:var(--gold-deep);display:flex;align-items:center;justify-content:center;
+      font-weight:700;flex:0 0 auto;margin-top:1px;border:1px solid rgba(230,162,60,.15);
+    }
 
-.comparison{
-  background:rgba(255,255,255,.84);border:1px solid rgba(255,255,255,.62);
-  border-radius:16px;padding:16px;box-shadow:var(--shadow-soft);backdrop-filter:blur(8px);
-}
-.check{
-  display:inline-block;background:var(--blue-soft);color:var(--blue-deep);
-  border-radius:999px;font-size:12px;font-weight:700;padding:5px 10px;
-  margin-bottom:10px;border:1px solid rgba(47,103,200,.08);
-}
+    .comparison{
+      background:rgba(255,255,255,.84);border:1px solid rgba(255,255,255,.62);
+      border-radius:16px;padding:16px;box-shadow:var(--shadow-soft);backdrop-filter:blur(8px);
+    }
+    .check{
+      display:inline-block;background:var(--blue-soft);color:var(--blue-deep);
+      border-radius:999px;font-size:12px;font-weight:700;padding:5px 10px;
+      margin-bottom:10px;border:1px solid rgba(47,103,200,.08);
+    }
 
-.profile{display:grid;gap:12px;grid-template-columns:110px 1fr;align-items:start;}
-.avatar{
-  width:110px;height:110px;border-radius:24px;
-  background:linear-gradient(180deg,#fef7e8 0%,#fffdf7 100%);
-  border:1px solid rgba(230,162,60,.18);
-  display:flex;align-items:center;justify-content:center;
-  font-size:34px;box-shadow:var(--shadow-soft);
-}
+    .profile{display:grid;gap:12px;grid-template-columns:110px 1fr;align-items:start;}
+    .avatar{
+      width:110px;height:110px;border-radius:24px;
+      background:linear-gradient(180deg,#fef7e8 0%,#fffdf7 100%);
+      border:1px solid rgba(230,162,60,.18);
+      display:flex;align-items:center;justify-content:center;
+      font-size:34px;box-shadow:var(--shadow-soft);
+    }
 
-.faq{display:grid;gap:10px;margin-top:14px}
-.faq-item{
-  background:rgba(255,255,255,.84);border:1px solid rgba(255,255,255,.62);
-  border-radius:16px;padding:14px;
-  box-shadow:var(--shadow-soft);backdrop-filter:blur(8px);
-}
+    .faq{display:grid;gap:10px;margin-top:14px}
+    .faq-item{
+      background:rgba(255,255,255,.84);border:1px solid rgba(255,255,255,.62);
+      border-radius:16px;padding:14px;
+      box-shadow:var(--shadow-soft);backdrop-filter:blur(8px);
+    }
 
-/* ── CTA section ─────────────────────────── */
-.cta-section{
-  margin-top:20px;
-  background:linear-gradient(180deg,rgba(255,255,255,.88) 0%,rgba(255,251,240,.86) 100%);
-  border:1px solid rgba(255,255,255,.6);border-radius:24px;
-  padding:24px 18px;box-shadow:var(--shadow);text-align:center;backdrop-filter:blur(10px);
-}
-.cta-line-btn{
-  display:flex;align-items:center;justify-content:center;width:100%;
-  background:linear-gradient(135deg,var(--blue) 0%,var(--blue-deep) 100%);
-  color:#fff;padding:18px;border-radius:16px;font-size:17px;font-weight:800;
-  box-shadow:0 14px 28px rgba(47,103,200,.25);margin-top:16px;
-  text-decoration:none;transition:.22s ease;min-height:52px;touch-action:manipulation;
-}
-.cta-line-btn:hover{transform:translateY(-1px)}
-.cta-sub{text-align:center;font-size:13px;color:var(--muted);margin-top:10px;line-height:1.7;}
+    /* ── CTA section ─────────────────────────── */
+    .cta-section{
+      margin-top:20px;
+      background:linear-gradient(180deg,rgba(255,255,255,.88) 0%,rgba(255,251,240,.86) 100%);
+      border:1px solid rgba(255,255,255,.6);border-radius:24px;
+      padding:24px 18px;box-shadow:var(--shadow);text-align:center;backdrop-filter:blur(10px);
+    }
+    .cta-line-btn{
+      display:flex;align-items:center;justify-content:center;width:100%;
+      background:linear-gradient(135deg,var(--blue) 0%,var(--blue-deep) 100%);
+      color:#fff;padding:18px;border-radius:16px;font-size:17px;font-weight:800;
+      box-shadow:0 14px 28px rgba(47,103,200,.25);margin-top:16px;
+      text-decoration:none;transition:.22s ease;min-height:52px;touch-action:manipulation;
+    }
+    .cta-line-btn:hover{transform:translateY(-1px)}
+    .cta-sub{text-align:center;font-size:13px;color:var(--muted);margin-top:10px;line-height:1.7;}
 
-/* ── Sticky CTA ──────────────────────────── */
-.sticky-cta{
-  position:sticky;
-  bottom:calc(10px + env(safe-area-inset-bottom));
-  z-index:20;margin-top:16px;
-}
-.sticky-cta a{
-  display:flex;align-items:center;justify-content:center;width:100%;
-  background:linear-gradient(135deg,var(--gold) 0%,var(--gold-deep) 100%);
-  color:#fff;padding:18px;border-radius:16px;font-size:17px;font-weight:800;
-  box-shadow:0 14px 28px rgba(201,137,31,.22);
-  text-decoration:none;transition:.22s ease;min-height:52px;touch-action:manipulation;
-}
-.sticky-cta a:hover{transform:translateY(-1px)}
+    /* ── Sticky CTA ──────────────────────────── */
+    .sticky-cta{
+      position:sticky;
+      bottom:calc(10px + env(safe-area-inset-bottom));
+      z-index:20;margin-top:16px;
+    }
+    .sticky-cta a{
+      display:flex;align-items:center;justify-content:center;width:100%;
+      background:linear-gradient(135deg,var(--gold) 0%,var(--gold-deep) 100%);
+      color:#fff;padding:18px;border-radius:16px;font-size:17px;font-weight:800;
+      box-shadow:0 14px 28px rgba(201,137,31,.22);
+      text-decoration:none;transition:.22s ease;min-height:52px;touch-action:manipulation;
+    }
+    .sticky-cta a:hover{transform:translateY(-1px)}
 
-/* ── Footer ──────────────────────────────── */
-.footer-note{
-  margin-top:18px;margin-bottom:24px;font-size:12px;
-  color:var(--muted);text-align:center;line-height:1.8;
-}
-.small{font-size:13px}
-.footer-note a{color:#5f6f86;font-size:13px;text-decoration:none;}
-.footer-note a:hover{text-decoration:underline;color:#2f67c8;}
+    /* ── Footer ──────────────────────────────── */
+    .footer-note{
+      margin-top:18px;margin-bottom:24px;font-size:12px;
+      color:var(--muted);text-align:center;line-height:1.8;
+    }
+    .small{font-size:13px}
+    .footer-note a{color:#5f6f86;font-size:13px;text-decoration:none;}
+    .footer-note a:hover{text-decoration:underline;color:#2f67c8;}
 
-/* ── Responsive ──────────────────────────── */
-@media(max-width:760px){
-  .grid-2,.grid-3{grid-template-columns:1fr}
-  .profile{grid-template-columns:1fr}
-  .avatar{width:88px;height:88px;border-radius:20px}
-}
-@media(max-width:640px){
-  .content{padding:10px 12px 0}
-  .hero{padding:22px 14px}
-  .btn-primary,.btn-secondary{width:100%}
-  h2{font-size:19px}
-  .lead{font-size:15px}
-}
-```
-
+    /* ── Responsive ──────────────────────────── */
+    @media(max-width:760px){
+      .grid-2,.grid-3{grid-template-columns:1fr}
+      .profile{grid-template-columns:1fr}
+      .avatar{width:88px;height:88px;border-radius:20px}
+    }
+    @media(max-width:640px){
+      .content{padding:10px 12px 0}
+      .hero{padding:22px 14px}
+      .btn-primary,.btn-secondary{width:100%}
+      h2{font-size:19px}
+      .lead{font-size:15px}
+    }
   </style>
 </head>
 <body>
@@ -273,192 +261,188 @@ li{margin:8px 0}
 <div class="page">
 
   <!-- Banner fills top of page -->
-
   <section class="hero-banner">
     <img src="banner.jpg" alt="LUMIAバナー" loading="lazy">
   </section>
 
   <!-- All content below banner gets side padding via .content -->
-
   <div class="content">
 
-```
-<section class="hero">
-  <div class="eyebrow">
-    中学生のお子さまを持つ保護者の方へ / 不登校・家庭支援
-  </div>
-  <h1>
-    「どう関わればいいのか分からない」<br>
-    その状態を、ひとりで抱え込まないでください。
-  </h1>
-  <p class="lead">
-    不登校は、子どもだけの問題ではありません。<br>
-    親・子ども・生活リズム・関わり方が重なり、状況が長引くことがあります。
-  </p>
-  <p class="lead muted">
-    LUMIAでは、無理に学校へ戻すことを急がず、
-    まずは家庭の中のしんどさを整理することから始めます。
-  </p>
-  <div class="hero-actions">
-    <a class="btn btn-primary" href="#contact">まずは無料で相談する</a>
-    <a class="btn btn-secondary" href="#difference">LUMIAの違いを見る</a>
-  </div>
-</section>
+    <section class="hero">
+      <div class="eyebrow">
+        中学生のお子さまを持つ保護者の方へ / 不登校・家庭支援
+      </div>
+      <h1>
+        「どう関わればいいのか分からない」<br>
+        その状態を、ひとりで抱え込まないでください。
+      </h1>
+      <p class="lead">
+        不登校は、子どもだけの問題ではありません。<br>
+        親・子ども・生活リズム・関わり方が重なり、状況が長引くことがあります。
+      </p>
+      <p class="lead muted">
+        LUMIAでは、無理に学校へ戻すことを急がず、
+        まずは家庭の中のしんどさを整理することから始めます。
+      </p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="#contact">まずは無料で相談する</a>
+        <a class="btn btn-secondary" href="#difference">LUMIAの違いを見る</a>
+      </div>
+    </section>
 
-<section class="section">
-  <div class="danger-box">
-    <h2 style="margin-top:0;color:var(--danger)">こんな状態が続いていませんか？</h2>
-    <ul>
-      <li>どう関わるのが正解か分からず、会話のたびに気をつかってしまう</li>
-      <li>朝になると親子ともに苦しくなり、家の空気が重くなる</li>
-      <li>何をしても変わらない気がして、焦りと無力感が強くなっている</li>
-      <li>進路・学習・将来への不安が大きいのに、どこへ相談すればいいか分からない</li>
-    </ul>
-    <p class="lead" style="margin-top:12px;margin-bottom:0">
-      この状態を放置すると、子どもだけでなく、保護者の心身の負担も大きくなりやすいです。だからこそ、早い段階で状況を整理することが大切です。
-    </p>
-  </div>
-</section>
+    <section class="section">
+      <div class="danger-box">
+        <h2 style="margin-top:0;color:var(--danger)">こんな状態が続いていませんか？</h2>
+        <ul>
+          <li>どう関わるのが正解か分からず、会話のたびに気をつかってしまう</li>
+          <li>朝になると親子ともに苦しくなり、家の空気が重くなる</li>
+          <li>何をしても変わらない気がして、焦りと無力感が強くなっている</li>
+          <li>進路・学習・将来への不安が大きいのに、どこへ相談すればいいか分からない</li>
+        </ul>
+        <p class="lead" style="margin-top:12px;margin-bottom:0">
+          この状態を放置すると、子どもだけでなく、保護者の心身の負担も大きくなりやすいです。だからこそ、早い段階で状況を整理することが大切です。
+        </p>
+      </div>
+    </section>
 
-<section class="section panel">
-  <h2 style="margin-top:0">LUMIAの考え方</h2>
-  <p class="lead">「無理に学校に戻す」ことだけを目的にはしません。まずは<strong>生活・気持ち・関係性</strong>を整え、動ける土台をつくることを大切にします。</p>
-  <p class="lead muted">小さな行動を積み重ねながら、自己肯定感と行動力を少しずつ回復していけるよう支援します。</p>
-</section>
+    <section class="section panel">
+      <h2 style="margin-top:0">LUMIAの考え方</h2>
+      <p class="lead">「無理に学校に戻す」ことだけを目的にはしません。まずは<strong>生活・気持ち・関係性</strong>を整え、動ける土台をつくることを大切にします。</p>
+      <p class="lead muted">小さな行動を積み重ねながら、自己肯定感と行動力を少しずつ回復していけるよう支援します。</p>
+    </section>
 
-<section class="section" id="difference">
-  <h2>LUMIAの違い</h2>
-  <div class="grid-3">
-    <div class="comparison">
-      <div class="check">違い 01</div>
-      <h3>勉強を教えるだけで終わらない</h3>
-      <p>学習内容そのものよりも、<strong>学び方・続け方・取り組み方</strong>を整えることを大切にします。</p>
+    <section class="section" id="difference">
+      <h2>LUMIAの違い</h2>
+      <div class="grid-3">
+        <div class="comparison">
+          <div class="check">違い 01</div>
+          <h3>勉強を教えるだけで終わらない</h3>
+          <p>学習内容そのものよりも、<strong>学び方・続け方・取り組み方</strong>を整えることを大切にします。</p>
+        </div>
+        <div class="comparison">
+          <div class="check">違い 02</div>
+          <h3>子どもだけでなく家庭ごと支える</h3>
+          <p>保護者の不安や関わり方も支援対象です。親子のやり取りを含めて、無理の少ない形を一緒に考えます。</p>
+        </div>
+        <div class="comparison">
+          <div class="check">違い 03</div>
+          <h3>生活から整える</h3>
+          <p>学習や進路の前に、睡眠・リズム・行動の土台を見直し、継続しやすい形へつなげます。</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>こんなご家庭に向いています</h2>
+      <div class="grid-2">
+        <div class="card">学校へ行けるかどうか以前に、まず家庭での関わり方を整理したい</div>
+        <div class="card">子どもにどう声をかければいいか分からず、毎回悩んでしまう</div>
+        <div class="card">学習の遅れも気になるが、今は本人の気力が追いついていない</div>
+        <div class="card">フリースクールや塾だけでは合わない気がしている</div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>サポート内容</h2>
+      <div class="panel list">
+        <ul>
+          <li>生活リズムの立て直しサポート</li>
+          <li>学習の進め方・習慣づけの支援</li>
+          <li>子どもとの対話・声かけの整理</li>
+          <li>保護者の相談対応</li>
+          <li>安心できるオンラインでの関わり</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>ご相談の流れ</h2>
+      <div class="flow">
+        <div class="step">
+          <div class="num">1</div>
+          <div><strong>LINEでご連絡</strong><p>今の状況を、短くでもそのまま送って大丈夫です。</p></div>
+        </div>
+        <div class="step">
+          <div class="num">2</div>
+          <div><strong>状況を整理</strong><p>無理のない範囲で、何が起きているかを一緒に整理します。</p></div>
+        </div>
+        <div class="step">
+          <div class="num">3</div>
+          <div><strong>必要な支援をご提案</strong><p>ご家庭に合う関わり方やサポート内容をご案内します。</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>料金について</h2>
+      <div class="panel">
+        <p>
+          無理にサービスをおすすめすることはありません。<br>
+          まずは現在の状況を整理した上で、必要な場合のみご案内いたします。
+        </p>
+        <p>
+          ・小学生：月額 6,000円〜<br>
+          ・中学生：月額 7,800円〜<br>
+          ・高校生：月額 8,500円〜
+        </p>
+        <p>
+          ※初回は無料でご相談いただけます。<br>
+          無理な勧誘は行いませんのでご安心ください。
+        </p>
+        <p>個別相談や追加サポートなど、必要に応じたオプションもご用意しています。</p>
+      </div>
+    </section>
+
+    <section class="section panel">
+      <div class="profile">
+        <div class="avatar">🌱</div>
+        <div>
+          <h2 style="margin-top:0">運営者について</h2>
+          <p>看護を学ぶ中で、不登校のお子さま本人だけでなく、保護者の負担や家庭内の苦しさにも強く課題を感じ、この活動を考え始めました。</p>
+          <p class="muted" style="margin-top:10px">教科書だけでは分からない現実に向き合いながら、子どもと家庭の両方を支えられる形を大切にしています。</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>よくある不安</h2>
+      <div class="faq">
+        <div class="faq-item">
+          <h3>無理に勧誘されませんか？</h3>
+          <p>いいえ。まずは今の状況を整理するところから始めます。無理に申し込みを勧めることはありません。</p>
+        </div>
+        <div class="faq-item">
+          <h3>何を相談していいか分かりません</h3>
+          <p>まとまっていなくても大丈夫です。話しながら整理できます。</p>
+        </div>
+        <div class="faq-item">
+          <h3>まだ利用するか決めていません</h3>
+          <p>問題ありません。初回は「今どうなっているか」を整理するだけでも大丈夫です。</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta-section" id="contact">
+      <h2>今の状態を、一緒に整理しませんか？</h2>
+      <p class="lead">最初からうまく話せなくても大丈夫です。<br><strong>初回は「状況整理だけ」でも構いません。</strong></p>
+      <a class="cta-line-btn" href="https://lin.ee/sb6gOrZ" target="_blank" rel="noopener noreferrer">
+        LINEで無料相談してみる
+      </a>
+      <div class="cta-sub">※通常24時間以内を目安にご返信いたします。状況整理だけでも大丈夫です。</div>
+    </section>
+
+    <div class="sticky-cta">
+      <a href="https://lin.ee/sb6gOrZ" target="_blank" rel="noopener noreferrer">
+        LINEで無料相談してみる
+      </a>
     </div>
-    <div class="comparison">
-      <div class="check">違い 02</div>
-      <h3>子どもだけでなく家庭ごと支える</h3>
-      <p>保護者の不安や関わり方も支援対象です。親子のやり取りを含めて、無理の少ない形を一緒に考えます。</p>
-    </div>
-    <div class="comparison">
-      <div class="check">違い 03</div>
-      <h3>生活から整える</h3>
-      <p>学習や進路の前に、睡眠・リズム・行動の土台を見直し、継続しやすい形へつなげます。</p>
-    </div>
-  </div>
-</section>
 
-<section class="section">
-  <h2>こんなご家庭に向いています</h2>
-  <div class="grid-2">
-    <div class="card">学校へ行けるかどうか以前に、まず家庭での関わり方を整理したい</div>
-    <div class="card">子どもにどう声をかければいいか分からず、毎回悩んでしまう</div>
-    <div class="card">学習の遅れも気になるが、今は本人の気力が追いついていない</div>
-    <div class="card">フリースクールや塾だけでは合わない気がしている</div>
-  </div>
-</section>
-
-<section class="section">
-  <h2>サポート内容</h2>
-  <div class="panel list">
-    <ul>
-      <li>生活リズムの立て直しサポート</li>
-      <li>学習の進め方・習慣づけの支援</li>
-      <li>子どもとの対話・声かけの整理</li>
-      <li>保護者の相談対応</li>
-      <li>安心できるオンラインでの関わり</li>
-    </ul>
-  </div>
-</section>
-
-<section class="section">
-  <h2>ご相談の流れ</h2>
-  <div class="flow">
-    <div class="step">
-      <div class="num">1</div>
-      <div><strong>LINEでご連絡</strong><p>今の状況を、短くでもそのまま送って大丈夫です。</p></div>
+    <div class="footer-note">
+      LUMIA<br>
+      <span class="small">不登校・家庭支援 / 相談窓口</span><br>
+      <a href="terms.html">利用規約</a>　
+      <a href="privacy.html">プライバシーポリシー</a>
     </div>
-    <div class="step">
-      <div class="num">2</div>
-      <div><strong>状況を整理</strong><p>無理のない範囲で、何が起きているかを一緒に整理します。</p></div>
-    </div>
-    <div class="step">
-      <div class="num">3</div>
-      <div><strong>必要な支援をご提案</strong><p>ご家庭に合う関わり方やサポート内容をご案内します。</p></div>
-    </div>
-  </div>
-</section>
-
-<section class="section">
-  <h2>料金について</h2>
-  <div class="panel">
-    <p>
-      無理にサービスをおすすめすることはありません。<br>
-      まずは現在の状況を整理した上で、必要な場合のみご案内いたします。
-    </p>
-    <p>
-      ・小学生：月額 6,000円〜<br>
-      ・中学生：月額 7,800円〜<br>
-      ・高校生：月額 8,500円〜
-    </p>
-    <p>
-      ※初回は無料でご相談いただけます。<br>
-      無理な勧誘は行いませんのでご安心ください。
-    </p>
-    <p>個別相談や追加サポートなど、必要に応じたオプションもご用意しています。</p>
-  </div>
-</section>
-
-<section class="section panel">
-  <div class="profile">
-    <div class="avatar">🌱</div>
-    <div>
-      <h2 style="margin-top:0">運営者について</h2>
-      <p>看護を学ぶ中で、不登校のお子さま本人だけでなく、保護者の負担や家庭内の苦しさにも強く課題を感じ、この活動を考え始めました。</p>
-      <p class="muted" style="margin-top:10px">教科書だけでは分からない現実に向き合いながら、子どもと家庭の両方を支えられる形を大切にしています。</p>
-    </div>
-  </div>
-</section>
-
-<section class="section">
-  <h2>よくある不安</h2>
-  <div class="faq">
-    <div class="faq-item">
-      <h3>無理に勧誘されませんか？</h3>
-      <p>いいえ。まずは今の状況を整理するところから始めます。無理に申し込みを勧めることはありません。</p>
-    </div>
-    <div class="faq-item">
-      <h3>何を相談していいか分かりません</h3>
-      <p>まとまっていなくても大丈夫です。話しながら整理できます。</p>
-    </div>
-    <div class="faq-item">
-      <h3>まだ利用するか決めていません</h3>
-      <p>問題ありません。初回は「今どうなっているか」を整理するだけでも大丈夫です。</p>
-    </div>
-  </div>
-</section>
-
-<section class="cta-section" id="contact">
-  <h2>今の状態を、一緒に整理しませんか？</h2>
-  <p class="lead">最初からうまく話せなくても大丈夫です。<br><strong>初回は「状況整理だけ」でも構いません。</strong></p>
-  <a class="cta-line-btn" href="https://lin.ee/sb6gOrZ" target="_blank" rel="noopener noreferrer">
-    LINEで無料相談してみる
-  </a>
-  <div class="cta-sub">※通常24時間以内を目安にご返信いたします。状況整理だけでも大丈夫です。</div>
-</section>
-
-<div class="sticky-cta">
-  <a href="https://lin.ee/sb6gOrZ" target="_blank" rel="noopener noreferrer">
-    LINEで無料相談してみる
-  </a>
-</div>
-
-<div class="footer-note">
-  LUMIA<br>
-  <span class="small">不登校・家庭支援 / 相談窓口</span><br>
-  <a href="terms.html">利用規約</a>　
-  <a href="privacy.html">プライバシーポリシー</a>
-</div>
-```
 
   </div><!-- /content -->
 </div><!-- /page -->
