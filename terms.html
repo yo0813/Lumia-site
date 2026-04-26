@@ -4,150 +4,180 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>利用規約 | LUMIA</title>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&family=M+PLUS+Rounded+1c:wght@300;400;500;700&family=Cormorant+Garamond:wght@300;400;600&family=Pacifico&display=swap" rel="stylesheet">
   <style>
-    body {
-      margin: 0;
-      padding: 0;
-      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN",
-        "Yu Gothic", sans-serif;
-      background: linear-gradient(180deg, #f7fbff 0%, #eef6f7 100%);
-      color: #1f2d3d;
-      line-height: 1.9;
+    :root{
+      --sky:#4a9fd4;--sky-deep:#2176b0;--sky-mid:#6ab8e0;
+      --sky-pale:#e8f6fd;--sky-ghost:#f4fbff;
+      --gold:#d4960a;--gold-lt:#f0c040;
+      --white:#ffffff;--txt-dark:#1a2f44;--txt-mid:#3d6080;--txt-light:#7a9ab5;
+    }
+    *{margin:0;padding:0;box-sizing:border-box;}
+    body{
+      font-family:'M PLUS Rounded 1c',sans-serif;
+      background:linear-gradient(175deg,#ffffff 0%,#e2f4fd 35%,#c6eaf9 65%,#dff3ff 100%);
+      color:var(--txt-dark);min-height:100vh;
     }
 
-    .container {
-      max-width: 860px;
-      margin: 0 auto;
-      padding: 48px 20px 64px;
+    /* NAV */
+    nav{
+      display:flex;align-items:center;justify-content:space-between;
+      padding:14px 40px;
+      background:rgba(255,255,255,0.96);
+      backdrop-filter:blur(20px);
+      border-bottom:1px solid rgba(74,159,212,0.15);
+      box-shadow:0 2px 20px rgba(33,118,176,0.08);
+    }
+    .nav-logo{display:flex;align-items:center;gap:10px;text-decoration:none;}
+    .nav-logo img{width:36px;height:36px;border-radius:50%;object-fit:cover;box-shadow:0 2px 10px rgba(74,159,212,0.25);}
+    .nav-logo-text{font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:600;color:var(--sky-deep);letter-spacing:0.14em;}
+    .nav-logo-sub{font-size:10px;color:var(--gold);letter-spacing:0.2em;display:block;margin-top:-3px;}
+
+    /* MAIN */
+    .page-wrap{max-width:800px;margin:0 auto;padding:52px 20px 80px;}
+
+    /* Header */
+    .page-header{text-align:center;margin-bottom:48px;}
+    .page-eyebrow{
+      display:inline-flex;align-items:center;gap:6px;
+      font-size:11px;letter-spacing:.16em;color:var(--sky-deep);font-weight:600;
+      background:white;padding:6px 16px;border-radius:20px;
+      box-shadow:0 3px 16px rgba(33,118,176,0.13);margin-bottom:18px;
+    }
+    .page-eyebrow::before{content:'✦';color:var(--gold);font-size:10px;}
+    .page-header h1{
+      font-family:'Noto Serif JP',serif;
+      font-size:clamp(24px,4vw,36px);font-weight:700;
+      color:var(--txt-dark);margin-bottom:10px;
+    }
+    .page-header p{font-size:14px;color:var(--txt-mid);line-height:1.9;}
+
+    /* Card */
+    .card{
+      background:rgba(255,255,255,0.95);
+      border-radius:24px;
+      padding:40px 40px;
+      box-shadow:0 12px 40px rgba(33,118,176,0.1);
+      border:1px solid rgba(74,159,212,0.12);
     }
 
-    .card {
-      background: rgba(255, 255, 255, 0.96);
-      border-radius: 20px;
-      padding: 32px 24px;
-      box-shadow: 0 10px 30px rgba(31, 45, 61, 0.08);
-      border: 1px solid rgba(120, 160, 180, 0.12);
+    /* Sections */
+    .section{margin-bottom:28px;}
+    .section:last-of-type{margin-bottom:0;}
+
+    h2{
+      font-family:'Noto Serif JP',serif;
+      font-size:17px;font-weight:700;
+      color:var(--txt-dark);
+      padding:10px 16px;
+      border-left:4px solid var(--sky-mid);
+      background:var(--sky-ghost);
+      border-radius:0 10px 10px 0;
+      margin-bottom:12px;
     }
 
-    .eyebrow {
-      display: inline-block;
-      font-size: 13px;
-      letter-spacing: 0.08em;
-      color: #5d7f86;
-      background: #edf7f8;
-      padding: 6px 10px;
-      border-radius: 999px;
-      margin-bottom: 14px;
-    }
+    p,li{font-size:14px;color:var(--txt-mid);line-height:1.9;}
+    ul{padding-left:1.4em;display:flex;flex-direction:column;gap:6px;margin-top:8px;}
+    li::marker{color:var(--sky);}
 
-    h1 {
-      font-size: 30px;
-      margin: 0 0 12px;
-      color: #16323f;
-    }
+    /* Divider */
+    .divider{height:1px;background:rgba(74,159,212,0.12);margin:28px 0;}
 
-    .intro {
-      font-size: 15px;
-      color: #4a5c68;
-      margin-bottom: 28px;
+    /* Back button */
+    .back-wrap{text-align:center;margin-top:40px;}
+    .back-btn{
+      display:inline-flex;align-items:center;gap:8px;
+      background:linear-gradient(135deg,var(--sky-deep),var(--sky-mid));
+      color:white;padding:13px 28px;border-radius:50px;
+      text-decoration:none;font-weight:700;font-size:14px;
+      box-shadow:0 8px 24px rgba(33,118,176,0.32);
+      transition:transform .25s,box-shadow .25s;
     }
+    .back-btn:hover{transform:translateY(-3px);box-shadow:0 14px 32px rgba(33,118,176,0.42);}
 
-    h2 {
-      font-size: 22px;
-      margin-top: 34px;
-      margin-bottom: 12px;
-      color: #16323f;
-      padding-left: 12px;
-      border-left: 4px solid #8fcfd1;
+    /* Footer */
+    footer{
+      background:var(--txt-dark);padding:28px 40px;
+      border-top:3px solid var(--sky-mid);
+      text-align:center;
     }
+    footer p{font-size:12px;color:rgba(255,255,255,.3);letter-spacing:.06em;}
 
-    p, li {
-      font-size: 16px;
-      margin: 0;
-      color: #243746;
-    }
-
-    ul {
-      margin: 10px 0 0 0;
-      padding-left: 1.2em;
-    }
-
-    li + li {
-      margin-top: 6px;
-    }
-
-    .section {
-      margin-bottom: 24px;
-    }
-
-    .back-link {
-      display: inline-block;
-      margin-top: 32px;
-      color: #2f6f7e;
-      text-decoration: none;
-      font-weight: 600;
-    }
-
-    .back-link:hover {
-      text-decoration: underline;
+    @media(max-width:600px){
+      nav{padding:12px 18px;}
+      .card{padding:28px 20px;}
+      .page-wrap{padding:36px 14px 60px;}
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <div class="card">
-      <div class="eyebrow">LUMIA</div>
-      <h1>利用規約</h1>
-      <p class="intro">
-        本規約は、Lumia（以下、「当サービス」）の利用条件を定めるものです。
-      </p>
 
-      <div class="section">
-        <h2>1. 適用</h2>
-        <p>
-          本規約は、当サービスの利用に関わる一切の関係に適用されます。
-        </p>
-      </div>
+<nav>
+  <a href="lumia.html" class="nav-logo">
+    <img src="44B2485B-28D0-4898-863E-DFA8D5366583.png" alt="LUMIA">
+    <div>
+      <span class="nav-logo-text">LUMIA</span>
+      <span class="nav-logo-sub">ルミア</span>
+    </div>
+  </a>
+</nav>
 
-      <div class="section">
-        <h2>2. 利用内容</h2>
-        <p>
-          当サービスは、不登校のお子さまとご家庭への支援および相談を提供します。
-        </p>
-      </div>
+<div class="page-wrap">
+  <div class="page-header">
+    <div class="page-eyebrow">Legal</div>
+    <h1>利用規約</h1>
+    <p>本規約は、Lumia（以下、「当サービス」）の利用条件を定めるものです。</p>
+  </div>
 
-      <div class="section">
-        <h2>3. 禁止事項</h2>
-        <ul>
-          <li>法令または公序良俗に反する行為</li>
-          <li>他者の権利を侵害する行為</li>
-          <li>虚偽の情報を提供する行為</li>
-        </ul>
-      </div>
+  <div class="card">
+    <div class="section">
+      <h2>1. 適用</h2>
+      <p>本規約は、当サービスの利用に関わる一切の関係に適用されます。</p>
+    </div>
+    <div class="divider"></div>
 
-      <div class="section">
-        <h2>4. 免責事項</h2>
-        <p>
-          当サービスは、提供する情報や支援の正確性・完全性を保証するものではありません。
-        </p>
-      </div>
+    <div class="section">
+      <h2>2. 利用内容</h2>
+      <p>当サービスは、不登校のお子さまとご家庭への支援および相談を提供します。</p>
+    </div>
+    <div class="divider"></div>
 
-      <div class="section">
-        <h2>5. サービスの変更・停止</h2>
-        <p>
-          必要に応じて、サービス内容の変更や停止を行うことがあります。
-        </p>
-      </div>
+    <div class="section">
+      <h2>3. 禁止事項</h2>
+      <ul>
+        <li>法令または公序良俗に反する行為</li>
+        <li>他者の権利を侵害する行為</li>
+        <li>虚偽の情報を提供する行為</li>
+      </ul>
+    </div>
+    <div class="divider"></div>
 
-      <div class="section">
-        <h2>6. 規約の変更</h2>
-        <p>
-          本規約は、必要に応じて変更することがあります。
-        </p>
-      </div>
+    <div class="section">
+      <h2>4. 免責事項</h2>
+      <p>当サービスは、提供する情報や支援の正確性・完全性を保証するものではありません。</p>
+    </div>
+    <div class="divider"></div>
 
-      <a class="back-link" href="index.html">← トップページに戻る</a>
+    <div class="section">
+      <h2>5. サービスの変更・停止</h2>
+      <p>必要に応じて、サービス内容の変更や停止を行うことがあります。</p>
+    </div>
+    <div class="divider"></div>
+
+    <div class="section">
+      <h2>6. 規約の変更</h2>
+      <p>本規約は、必要に応じて変更することがあります。</p>
     </div>
   </div>
+
+  <div class="back-wrap">
+    <a href="lumia.html" class="back-btn">← トップページに戻る</a>
+  </div>
+</div>
+
+<footer>
+  <p>© 2025 LUMIA / NOVAQS PROJECT. All Rights Reserved.</p>
+</footer>
+
 </body>
 </html>
