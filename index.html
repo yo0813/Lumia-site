@@ -208,6 +208,22 @@ footer{background:var(--txt-dark);padding:52px 0 26px;border-top:3px solid var(-
 .reveal{opacity:0;transform:translateY(24px);transition:opacity .75s ease,transform .75s ease;}
 .reveal.visible{opacity:1;transform:translateY(0);}
 
+/* FAQ */
+.faq-section{background:var(--sky-ghost);}
+.faq-categories{display:flex;flex-direction:column;gap:32px;margin-top:50px;}
+.faq-cat-title{font-family:'Noto Serif JP',serif;font-size:15px;font-weight:700;color:var(--sky-deep);margin-bottom:14px;display:flex;align-items:center;gap:8px;}
+.faq-cat-title::before{content:'';width:14px;height:2px;background:var(--sky-deep);border-radius:2px;}
+.faq-list{display:flex;flex-direction:column;gap:8px;}
+.faq-item{background:white;border-radius:16px;overflow:hidden;box-shadow:0 2px 12px rgba(33,118,176,0.06);border:1px solid rgba(74,159,212,0.1);}
+.faq-q{width:100%;text-align:left;background:none;border:none;cursor:pointer;padding:16px 20px;display:flex;align-items:flex-start;gap:10px;font-family:'M PLUS Rounded 1c',sans-serif;font-size:14px;font-weight:700;color:var(--txt-dark);line-height:1.7;transition:background .2s;}
+.faq-q:hover{background:var(--sky-ghost);}
+.faq-q-icon{width:22px;height:22px;border-radius:50%;flex-shrink:0;margin-top:2px;background:linear-gradient(135deg,var(--sky-deep),var(--sky-mid));color:white;font-size:11px;font-weight:700;display:flex;align-items:center;justify-content:center;}
+.faq-arrow{margin-left:auto;flex-shrink:0;color:var(--sky-mid);transition:transform .3s;font-size:11px;}
+.faq-item.open .faq-arrow{transform:rotate(180deg);}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .35s ease,padding .35s ease;padding:0 20px;}
+.faq-item.open .faq-a{max-height:400px;padding:0 20px 16px;}
+.faq-a p{font-size:13px;color:var(--txt-mid);line-height:1.9;padding-left:32px;border-left:3px solid var(--sky-pale);}
+
 /* RESPONSIVE */
 @media(max-width:860px){
   nav{padding:11px 18px;}.nav-links{display:none;}
@@ -303,6 +319,96 @@ footer{background:var(--txt-dark);padding:52px 0 26px;border-top:3px solid var(-
       <div class="pillar-card reveal"><div class="pillar-icon">👟</div><div class="pillar-text"><h3>行動</h3><span class="pillar-en">Action</span><p>小さな行動を積み重ね、成功体験と自己肯定感を少しずつ育てます</p></div></div>
       <div class="pillar-card reveal"><div class="pillar-icon">💛</div><div class="pillar-text"><h3>興味</h3><span class="pillar-en">Interest</span><p>好き・得意を見つけ、やりたいという気持ちを引き出す支援をします</p></div></div>
       <div class="pillar-card reveal"><div class="pillar-icon">⭐</div><div class="pillar-text"><h3>将来</h3><span class="pillar-en">Future</span><p>進学・働き方・生き方など、一人ひとりに合った未来を一緒に考えます</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="faq-section">
+  <div class="container">
+    <div class="reveal center">
+      <p class="sec-label" style="justify-content:center">FAQ</p>
+      <h2 class="sec-title">よくあるご質問</h2>
+      <p class="sec-desc">気になることがあればお気軽にLINEでもご相談ください。</p>
+    </div>
+
+    <div class="faq-categories">
+
+      <div class="reveal">
+        <div class="faq-cat-title">サービス内容について</div>
+        <div class="faq-list">
+          <div class="faq-item">
+            <button class="faq-q"><span class="faq-q-icon">Q</span>どのような支援を行うサービスですか？<span class="faq-arrow">▼</span></button>
+            <div class="faq-a"><p>不登校や行き渋りの背景にある生活リズム・行動・メンタルのバランスを整えることを目的とした支援です。「生活・行動・興味・将来」の4つの軸から、一人ひとりの状態に合わせて段階的にサポートを行います。</p></div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q"><span class="faq-q-icon">Q</span>学習塾やフリースクールとの違いは何ですか？<span class="faq-arrow">▼</span></button>
+            <div class="faq-a"><p>学習や居場所だけでなく、「動けない状態」を「動ける状態」にするための支援を行う点が大きな違いです。生活リズムや行動設計、メンタルサポート、保護者支援まで一貫して対応します。</p></div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q"><span class="faq-q-icon">Q</span>学校復帰を目標にしていますか？<span class="faq-arrow">▼</span></button>
+            <div class="faq-a"><p>無理に学校復帰を目標にはしていません。お子さまの状態に合わせて、学校復帰・出席認定・高卒認定など、複数の選択肢の中から最適な進路を一緒に考えます。</p></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="reveal">
+        <div class="faq-cat-title">効果・変化について</div>
+        <div class="faq-list">
+          <div class="faq-item">
+            <button class="faq-q"><span class="faq-q-icon">Q</span>本当に変化は出ますか？<span class="faq-arrow">▼</span></button>
+            <div class="faq-a"><p>個人差はありますが、多くの場合いきなり大きな変化は出ません。まずは生活の安定や小さな行動の変化から始まり、徐々に「できること」が増えていきます。</p></div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q"><span class="faq-q-icon">Q</span>どのくらいで変化が出ますか？<span class="faq-arrow">▼</span></button>
+            <div class="faq-a"><p>早い場合は2〜3週間で小さな変化が見られることもありますが、一般的には1〜3ヶ月かけて徐々に変化していきます。</p></div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q"><span class="faq-q-icon">Q</span>子どもが何もしなかった場合はどうなりますか？<span class="faq-arrow">▼</span></button>
+            <div class="faq-a"><p>無理にやらせることはせず、現在の状態に合わせて目標を再設定します。「できるレベルまで下げる」ことも支援の一つです。</p></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="reveal">
+        <div class="faq-cat-title">利用・サポート体制について</div>
+        <div class="faq-list">
+          <div class="faq-item">
+            <button class="faq-q"><span class="faq-q-icon">Q</span>子どもがサービスを利用しない場合でも意味はありますか？<span class="faq-arrow">▼</span></button>
+            <div class="faq-a"><p>はい、あります。保護者の関わり方が変わることで、子どもの状態に変化が出るケースも多く見られます。そのため、保護者支援も重要な柱としています。</p></div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q"><span class="faq-q-icon">Q</span>保護者へのサポート内容を教えてください<span class="faq-arrow">▼</span></button>
+            <div class="faq-a"><p>個別面談による相談、チャットでの随時相談、関わり方のアドバイス、子どもの状況共有などを行います。不安や悩みを一人で抱えない環境を整えています。</p></div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q"><span class="faq-q-icon">Q</span>AIサポートとはどのようなものですか？<span class="faq-arrow">▼</span></button>
+            <div class="faq-a"><p>専用タブレットを通じて、24時間いつでも相談できるチャット環境を提供します。人に話しにくい内容でも気軽に吐き出せる仕組みです。</p></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="reveal">
+        <div class="faq-cat-title">費用・契約について</div>
+        <div class="faq-list">
+          <div class="faq-item">
+            <button class="faq-q"><span class="faq-q-icon">Q</span>途中で退会することはできますか？<span class="faq-arrow">▼</span></button>
+            <div class="faq-a"><p>はい、可能です。無理な継続をお願いすることはありません。</p></div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q"><span class="faq-q-icon">Q</span>追加料金がかかることはありますか？<span class="faq-arrow">▼</span></button>
+            <div class="faq-a"><p>個別相談やイベントなどはオプション料金となります。事前にご説明の上でご利用いただきます。</p></div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q"><span class="faq-q-icon">Q</span>他のサービスと併用できますか？<span class="faq-arrow">▼</span></button>
+            <div class="faq-a"><p>はい、可能です。学習塾や医療機関などと併用しながら進めることもできます。</p></div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q"><span class="faq-q-icon">Q</span>相談だけの利用はできますか？<span class="faq-arrow">▼</span></button>
+            <div class="faq-a"><p>はい、個別相談のみのご利用も可能です。まずはお気軽にご相談ください。</p></div>
+          </div>
+        </div>
+      </div>
+
     </div>
   </div>
 </section>
@@ -441,6 +547,8 @@ footer{background:var(--txt-dark);padding:52px 0 26px;border-top:3px solid var(-
 const sp=document.getElementById('sparkles');
 for(let i=0;i<24;i++){const el=document.createElement('div');const s=3+Math.random()*5;el.className='sparkle';el.style.cssText=`left:${Math.random()*100}%;top:${Math.random()*80}%;width:${s}px;height:${s}px;--d:${2+Math.random()*4}s;--dl:${Math.random()*5}s;`;sp.appendChild(el);}
 const obs=new IntersectionObserver((entries)=>{entries.forEach((e,i)=>{if(e.isIntersecting){setTimeout(()=>e.target.classList.add('visible'),i*65);obs.unobserve(e.target);}});},{threshold:0.08});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+document.querySelectorAll('.faq-q').forEach(btn=>{btn.addEventListener('click',()=>{const item=btn.closest('.faq-item');const isOpen=item.classList.contains('open');document.querySelectorAll('.faq-item.open').forEach(i=>i.classList.remove('open'));if(!isOpen)item.classList.add('open');});});
 document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
 </script>
 </body>
