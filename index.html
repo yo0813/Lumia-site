@@ -208,6 +208,33 @@ footer{background:var(--txt-dark);padding:52px 0 26px;border-top:3px solid var(-
 .reveal{opacity:0;transform:translateY(24px);transition:opacity .75s ease,transform .75s ease;}
 .reveal.visible{opacity:1;transform:translateY(0);}
 
+/* SERVICE */
+.service-section{background:white;}
+.svc-tabs{display:flex;gap:12px;margin:40px 0 32px;justify-content:center;}
+.svc-tab{
+  padding:12px 32px;border-radius:50px;border:2px solid rgba(74,159,212,0.3);
+  background:white;color:var(--txt-mid);font-family:'M PLUS Rounded 1c',sans-serif;
+  font-size:14px;font-weight:700;cursor:pointer;transition:all .25s;
+}
+.svc-tab.active{
+  background:linear-gradient(135deg,var(--sky-deep),var(--sky-mid));
+  color:white;border-color:transparent;
+  box-shadow:0 6px 20px rgba(33,118,176,0.3);
+}
+.svc-tab:hover:not(.active){background:var(--sky-ghost);border-color:var(--sky-mid);}
+.svc-panel{transition:opacity .3s;}
+.svc-panel.hidden{display:none;}
+.svc-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:18px;}
+.svc-card{
+  background:var(--sky-ghost);border-radius:18px;padding:24px 20px;
+  border:1.5px solid rgba(74,159,212,0.12);
+  transition:transform .25s,box-shadow .25s;
+}
+.svc-card:hover{transform:translateY(-4px);box-shadow:0 12px 30px rgba(33,118,176,0.1);}
+.svc-icon{font-size:28px;margin-bottom:12px;}
+.svc-card h4{font-size:14px;font-weight:700;color:var(--txt-dark);margin-bottom:8px;}
+.svc-card p{font-size:13px;color:var(--txt-mid);line-height:1.85;}
+
 /* FAQ */
 .faq-section{background:var(--sky-ghost);}
 .faq-categories{display:flex;flex-direction:column;gap:32px;margin-top:50px;}
@@ -323,92 +350,95 @@ footer{background:var(--txt-dark);padding:52px 0 26px;border-top:3px solid var(-
   </div>
 </section>
 
-<section class="faq-section">
+<section class="service-section" id="service">
   <div class="container">
     <div class="reveal center">
-      <p class="sec-label" style="justify-content:center">FAQ</p>
-      <h2 class="sec-title">よくあるご質問</h2>
-      <p class="sec-desc">気になることがあればお気軽にLINEでもご相談ください。</p>
+      <p class="sec-label" style="justify-content:center">Service</p>
+      <h2 class="sec-title">具体的なサービス内容</h2>
+      <p class="sec-desc">お子さまと保護者の方、それぞれに寄り添ったサポートを提供します。</p>
     </div>
 
-    <div class="faq-categories">
+    <!-- TAB -->
+    <div class="svc-tabs reveal">
+      <button class="svc-tab active" data-tab="child">🧒 お子さま向け</button>
+      <button class="svc-tab" data-tab="parent">👪 保護者向け</button>
+    </div>
 
-      <div class="reveal">
-        <div class="faq-cat-title">サービス内容について</div>
-        <div class="faq-list">
-          <div class="faq-item">
-            <button class="faq-q"><span class="faq-q-icon">Q</span>どのような支援を行うサービスですか？<span class="faq-arrow">▼</span></button>
-            <div class="faq-a"><p>不登校や行き渋りの背景にある生活リズム・行動・メンタルのバランスを整えることを目的とした支援です。「生活・行動・興味・将来」の4つの軸から、一人ひとりの状態に合わせて段階的にサポートを行います。</p></div>
-          </div>
-          <div class="faq-item">
-            <button class="faq-q"><span class="faq-q-icon">Q</span>学習塾やフリースクールとの違いは何ですか？<span class="faq-arrow">▼</span></button>
-            <div class="faq-a"><p>学習や居場所だけでなく、「動けない状態」を「動ける状態」にするための支援を行う点が大きな違いです。生活リズムや行動設計、メンタルサポート、保護者支援まで一貫して対応します。</p></div>
-          </div>
-          <div class="faq-item">
-            <button class="faq-q"><span class="faq-q-icon">Q</span>学校復帰を目標にしていますか？<span class="faq-arrow">▼</span></button>
-            <div class="faq-a"><p>無理に学校復帰を目標にはしていません。お子さまの状態に合わせて、学校復帰・出席認定・高卒認定など、複数の選択肢の中から最適な進路を一緒に考えます。</p></div>
-          </div>
+    <!-- CHILD TAB -->
+    <div class="svc-panel" id="tab-child">
+      <div class="svc-grid">
+        <div class="svc-card reveal">
+          <div class="svc-icon">📋</div>
+          <h4>初期アセスメント</h4>
+          <p>支援開始時に生活リズム・メンタル・学習状況を丁寧に把握。回復初期／安定期／行動拡張期に分類し、無理のない支援レベルを設定します。</p>
+        </div>
+        <div class="svc-card reveal">
+          <div class="svc-icon">✅</div>
+          <h4>1日1アクション設計</h4>
+          <p>「起床時間を30分以内に整える」「5分だけ外に出る」など小さな行動を毎日設計。「できた」を積み重ねて自己肯定感を回復します。</p>
+        </div>
+        <div class="svc-card reveal">
+          <div class="svc-icon">🏠</div>
+          <h4>オンライン居場所</h4>
+          <p>24時間アクセス可能なオンライン空間。発言しなくても参加OK・匿名OK。「何もしなくていていい場所」で社会との接点をつなぎます。</p>
+        </div>
+        <div class="svc-card reveal">
+          <div class="svc-icon">📚</div>
+          <h4>学習計画サポート</h4>
+          <p>短い動画教材・学習ドリルなど心理的ハードルを下げた設計。小学・中学生は出席認定サポート、高校生は高卒認定試験の学習計画もサポート。</p>
+        </div>
+        <div class="svc-card reveal">
+          <div class="svc-icon">🔍</div>
+          <h4>興味・探究支援</h4>
+          <p>興味診断・適正診断でお子さまの「好き」を発見。イラスト・動画制作など体験提案を通じて「やらされる」から「やりたい」への転換を図ります。</p>
+        </div>
+        <div class="svc-card reveal">
+          <div class="svc-icon">🤖</div>
+          <h4>AIメンタルケア</h4>
+          <p>専用タブレットにAI心理カウンセラーを搭載し24時間相談可能。人に言いにくいことも話せる安心設計。定期的にスタッフとの関わりも設けます。</p>
+        </div>
+        <div class="svc-card reveal">
+          <div class="svc-icon">📓</div>
+          <h4>記録・自己理解</h4>
+          <p>専用ノートで「今日できたこと」「気持ちの変化」「小さな目標」を記録。自分の変化に気づける力を育てます。</p>
+        </div>
+        <div class="svc-card reveal">
+          <div class="svc-icon">🎪</div>
+          <h4>オフライン体験イベント</h4>
+          <p>ものづくり・自然体験・研修など定期的なリアルイベントを実施。「楽しかった」をベースに社会参加のハードルを下げます。</p>
         </div>
       </div>
+    </div>
 
-      <div class="reveal">
-        <div class="faq-cat-title">効果・変化について</div>
-        <div class="faq-list">
-          <div class="faq-item">
-            <button class="faq-q"><span class="faq-q-icon">Q</span>本当に変化は出ますか？<span class="faq-arrow">▼</span></button>
-            <div class="faq-a"><p>個人差はありますが、多くの場合いきなり大きな変化は出ません。まずは生活の安定や小さな行動の変化から始まり、徐々に「できること」が増えていきます。</p></div>
-          </div>
-          <div class="faq-item">
-            <button class="faq-q"><span class="faq-q-icon">Q</span>どのくらいで変化が出ますか？<span class="faq-arrow">▼</span></button>
-            <div class="faq-a"><p>早い場合は2〜3週間で小さな変化が見られることもありますが、一般的には1〜3ヶ月かけて徐々に変化していきます。</p></div>
-          </div>
-          <div class="faq-item">
-            <button class="faq-q"><span class="faq-q-icon">Q</span>子どもが何もしなかった場合はどうなりますか？<span class="faq-arrow">▼</span></button>
-            <div class="faq-a"><p>無理にやらせることはせず、現在の状態に合わせて目標を再設定します。「できるレベルまで下げる」ことも支援の一つです。</p></div>
-          </div>
+    <!-- PARENT TAB -->
+    <div class="svc-panel hidden" id="tab-parent">
+      <div class="svc-grid">
+        <div class="svc-card reveal">
+          <div class="svc-icon">💬</div>
+          <h4>24時間AIチャット相談</h4>
+          <p>日々の不安・子どもへのイライラ・誰にも言えない本音を吐き出せる場所。否定されない安心設計で、家庭内で感情をぶつける前に外で整理できます。</p>
+        </div>
+        <div class="svc-card reveal">
+          <div class="svc-icon">📞</div>
+          <h4>対人面談・メール・電話</h4>
+          <p>AIチャットに加え、スタッフによる個別対応も実施。「どう接すればいいか」を一緒に考え、具体的な声かけ例やNG行動も整理します。</p>
+        </div>
+        <div class="svc-card reveal">
+          <div class="svc-icon">🎓</div>
+          <h4>個別面談＋教育コンテンツ</h4>
+          <p>月1〜2回のオンライン個別面談。スキマ時間で学べる教育コンテンツ（不登校の背景・回復プロセス・関わり方の具体例）も提供します。</p>
+        </div>
+        <div class="svc-card reveal">
+          <div class="svc-icon">📊</div>
+          <h4>子どもの見える化レポート</h4>
+          <p>週1回、お子さまの行動・メンタルの変化・小さな成功体験をレポートで共有。日常では見えにくい「小さな成長」を可視化して過度な心配を軽減します。</p>
+        </div>
+        <div class="svc-card reveal">
+          <div class="svc-icon">👥</div>
+          <h4>保護者コミュニティ</h4>
+          <p>同じ立場の保護者同士がつながれる場。匿名参加OK・閲覧のみでも参加可能。「自分だけじゃない」という安心感と孤立感の軽減につながります。</p>
         </div>
       </div>
-
-      <div class="reveal">
-        <div class="faq-cat-title">利用・サポート体制について</div>
-        <div class="faq-list">
-          <div class="faq-item">
-            <button class="faq-q"><span class="faq-q-icon">Q</span>子どもがサービスを利用しない場合でも意味はありますか？<span class="faq-arrow">▼</span></button>
-            <div class="faq-a"><p>はい、あります。保護者の関わり方が変わることで、子どもの状態に変化が出るケースも多く見られます。そのため、保護者支援も重要な柱としています。</p></div>
-          </div>
-          <div class="faq-item">
-            <button class="faq-q"><span class="faq-q-icon">Q</span>保護者へのサポート内容を教えてください<span class="faq-arrow">▼</span></button>
-            <div class="faq-a"><p>個別面談による相談、チャットでの随時相談、関わり方のアドバイス、子どもの状況共有などを行います。不安や悩みを一人で抱えない環境を整えています。</p></div>
-          </div>
-          <div class="faq-item">
-            <button class="faq-q"><span class="faq-q-icon">Q</span>AIサポートとはどのようなものですか？<span class="faq-arrow">▼</span></button>
-            <div class="faq-a"><p>専用タブレットを通じて、24時間いつでも相談できるチャット環境を提供します。人に話しにくい内容でも気軽に吐き出せる仕組みです。</p></div>
-          </div>
-        </div>
-      </div>
-
-      <div class="reveal">
-        <div class="faq-cat-title">費用・契約について</div>
-        <div class="faq-list">
-          <div class="faq-item">
-            <button class="faq-q"><span class="faq-q-icon">Q</span>途中で退会することはできますか？<span class="faq-arrow">▼</span></button>
-            <div class="faq-a"><p>はい、可能です。無理な継続をお願いすることはありません。</p></div>
-          </div>
-          <div class="faq-item">
-            <button class="faq-q"><span class="faq-q-icon">Q</span>追加料金がかかることはありますか？<span class="faq-arrow">▼</span></button>
-            <div class="faq-a"><p>個別相談やイベントなどはオプション料金となります。事前にご説明の上でご利用いただきます。</p></div>
-          </div>
-          <div class="faq-item">
-            <button class="faq-q"><span class="faq-q-icon">Q</span>他のサービスと併用できますか？<span class="faq-arrow">▼</span></button>
-            <div class="faq-a"><p>はい、可能です。学習塾や医療機関などと併用しながら進めることもできます。</p></div>
-          </div>
-          <div class="faq-item">
-            <button class="faq-q"><span class="faq-q-icon">Q</span>相談だけの利用はできますか？<span class="faq-arrow">▼</span></button>
-            <div class="faq-a"><p>はい、個別相談のみのご利用も可能です。まずはお気軽にご相談ください。</p></div>
-          </div>
-        </div>
-      </div>
-
     </div>
   </div>
 </section>
@@ -422,7 +452,7 @@ footer{background:var(--txt-dark);padding:52px 0 26px;border-top:3px solid var(-
     </div>
     <div class="monitor-grid">
       <div class="reveal monitor-flyer">
-        <div class="monitor-flyer-img"><img src="/mnt/user-data/uploads/4D818EBE-9766-42EE-BA7A-AB939B545071.png" alt="モニター募集チラシ"></div>
+        <div class="monitor-flyer-img"><img src="https://raw.githubusercontent.com/Novaqs1222/Lumia-site/main/Monitor.PNG" alt="モニター募集チラシ"></div>
         <div class="mbadge"><span>10</span>家庭様<br>限定！</div>
       </div>
       <div class="reveal monitor-details">
@@ -448,15 +478,15 @@ footer{background:var(--txt-dark);padding:52px 0 26px;border-top:3px solid var(-
     <div class="pricing-grid">
       <div class="price-card reveal">
         <div class="price-header"><div class="price-grade">小学生</div><div class="price-amount">8,600<span class="price-unit">円/月（税込）</span></div></div>
-        <div class="price-body"><ul class="price-features"><li>オンライン居場所（24h）</li><li>生活習慣サポート</li><li>学習計画</li><li>AIチャット相談</li><li>保護者チャット相談</li><li>週1レポート</li></ul><a href="https://lin.ee/sb6gOrZ" target="_blank" rel="noopener" class="pbtn pbtn-sub">LINEで詳細を聞く</a></div>
+        <div class="price-body"><ul class="price-features"><li>オンライン居場所（24h）</li><li>生活習慣サポート</li><li>学習計画</li><li>AIチャット相談</li><li>保護者チャット相談</li><li>週1レポート</li><li>出席認定に向けた報告書作成サポート</li></ul><p style="font-size:11px;color:var(--txt-light);margin-top:8px;">※ 学校の判断により出席認定の可否は異なります</p><a href="https://lin.ee/sb6gOrZ" target="_blank" rel="noopener" class="pbtn pbtn-sub" style="margin-top:12px;">LINEで詳細を聞く</a></div>
       </div>
       <div class="price-card featured reveal">
         <div class="price-header"><div class="price-popular">人気</div><div class="price-grade">中学生</div><div class="price-amount">12,000<span class="price-unit">円/月（税込）</span></div></div>
-        <div class="price-body"><ul class="price-features"><li>オンライン居場所（24h）</li><li>生活習慣サポート</li><li>学習計画</li><li>AIチャット相談</li><li>保護者チャット相談</li><li>週1レポート</li></ul><a href="https://lin.ee/sb6gOrZ" target="_blank" rel="noopener" class="pbtn pbtn-main">LINEで詳細を聞く</a></div>
+        <div class="price-body"><ul class="price-features"><li>オンライン居場所（24h）</li><li>生活習慣サポート</li><li>学習計画</li><li>AIチャット相談</li><li>保護者チャット相談</li><li>週1レポート</li><li>出席認定に向けた報告書作成サポート</li></ul><p style="font-size:11px;color:var(--txt-light);margin-top:8px;">※ 学校の判断により出席認定の可否は異なります</p><a href="https://lin.ee/sb6gOrZ" target="_blank" rel="noopener" class="pbtn pbtn-main" style="margin-top:12px;">LINEで詳細を聞く</a></div>
       </div>
       <div class="price-card reveal">
         <div class="price-header"><div class="price-grade">高校生</div><div class="price-amount">13,600<span class="price-unit">円/月（税込）</span></div></div>
-        <div class="price-body"><ul class="price-features"><li>オンライン居場所（24h）</li><li>生活習慣サポート</li><li>学習計画＋進路相談</li><li>AIチャット相談</li><li>保護者チャット相談</li><li>週1レポート</li></ul><a href="https://lin.ee/sb6gOrZ" target="_blank" rel="noopener" class="pbtn pbtn-sub">LINEで詳細を聞く</a></div>
+        <div class="price-body"><ul class="price-features"><li>オンライン居場所（24h）</li><li>生活習慣サポート</li><li>学習計画</li><li>AIチャット相談</li><li>保護者チャット相談</li><li>週1レポート</li><li>高卒認定試験に向けた学習計画サポート</li></ul><p style="font-size:11px;color:var(--txt-light);margin-top:8px;">※ 学習の進捗や受験結果を保証するものではありません</p><a href="https://lin.ee/sb6gOrZ" target="_blank" rel="noopener" class="pbtn pbtn-sub" style="margin-top:12px;">LINEで詳細を聞く</a></div>
       </div>
     </div>
     <p style="text-align:center;margin-top:18px;font-size:14px;color:var(--txt-mid);font-weight:500;">※ 入会手数料：5,000円</p>
@@ -485,6 +515,51 @@ footer{background:var(--txt-dark);padding:52px 0 26px;border-top:3px solid var(-
         <div class="cf-flyer"><img src="/mnt/user-data/uploads/7601828F-7719-40EE-9EE7-EC3397535D2B.png" alt="クラファンチラシ"></div>
         <div class="cf-qr"><span style="font-size:26px;">📱</span><span>QRコード<br>（クラファンページ）</span></div>
         <a href="#" class="btn-sky">クラファンページを見る ✦</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="faq-section">
+  <div class="container">
+    <div class="reveal center">
+      <p class="sec-label" style="justify-content:center">FAQ</p>
+      <h2 class="sec-title">よくあるご質問</h2>
+      <p class="sec-desc">気になることがあればお気軽にLINEでもご相談ください。</p>
+    </div>
+    <div class="faq-categories">
+      <div class="reveal">
+        <div class="faq-cat-title">サービス内容について</div>
+        <div class="faq-list">
+          <div class="faq-item"><button class="faq-q"><span class="faq-q-icon">Q</span>どのような支援を行うサービスですか？<span class="faq-arrow">▼</span></button><div class="faq-a"><p>不登校や行き渋りの背景にある生活リズム・行動・メンタルのバランスを整えることを目的とした支援です。「生活・行動・興味・将来」の4つの軸から、一人ひとりの状態に合わせて段階的にサポートを行います。</p></div></div>
+          <div class="faq-item"><button class="faq-q"><span class="faq-q-icon">Q</span>学習塾やフリースクールとの違いは何ですか？<span class="faq-arrow">▼</span></button><div class="faq-a"><p>学習や居場所だけでなく、「動けない状態」を「動ける状態」にするための支援を行う点が大きな違いです。生活リズムや行動設計、メンタルサポート、保護者支援まで一貫して対応します。</p></div></div>
+          <div class="faq-item"><button class="faq-q"><span class="faq-q-icon">Q</span>学校復帰を目標にしていますか？<span class="faq-arrow">▼</span></button><div class="faq-a"><p>無理に学校復帰を目標にはしていません。お子さまの状態に合わせて、学校復帰・出席認定・高卒認定など、複数の選択肢の中から最適な進路を一緒に考えます。</p></div></div>
+        </div>
+      </div>
+      <div class="reveal">
+        <div class="faq-cat-title">効果・変化について</div>
+        <div class="faq-list">
+          <div class="faq-item"><button class="faq-q"><span class="faq-q-icon">Q</span>本当に変化は出ますか？<span class="faq-arrow">▼</span></button><div class="faq-a"><p>個人差はありますが、多くの場合いきなり大きな変化は出ません。まずは生活の安定や小さな行動の変化から始まり、徐々に「できること」が増えていきます。</p></div></div>
+          <div class="faq-item"><button class="faq-q"><span class="faq-q-icon">Q</span>どのくらいで変化が出ますか？<span class="faq-arrow">▼</span></button><div class="faq-a"><p>早い場合は2〜3週間で小さな変化が見られることもありますが、一般的には1〜3ヶ月かけて徐々に変化していきます。</p></div></div>
+          <div class="faq-item"><button class="faq-q"><span class="faq-q-icon">Q</span>子どもが何もしなかった場合はどうなりますか？<span class="faq-arrow">▼</span></button><div class="faq-a"><p>無理にやらせることはせず、現在の状態に合わせて目標を再設定します。「できるレベルまで下げる」ことも支援の一つです。</p></div></div>
+        </div>
+      </div>
+      <div class="reveal">
+        <div class="faq-cat-title">利用・サポート体制について</div>
+        <div class="faq-list">
+          <div class="faq-item"><button class="faq-q"><span class="faq-q-icon">Q</span>子どもがサービスを利用しない場合でも意味はありますか？<span class="faq-arrow">▼</span></button><div class="faq-a"><p>はい、あります。保護者の関わり方が変わることで、子どもの状態に変化が出るケースも多く見られます。そのため、保護者支援も重要な柱としています。</p></div></div>
+          <div class="faq-item"><button class="faq-q"><span class="faq-q-icon">Q</span>保護者へのサポート内容を教えてください<span class="faq-arrow">▼</span></button><div class="faq-a"><p>個別面談による相談、チャットでの随時相談、関わり方のアドバイス、子どもの状況共有などを行います。不安や悩みを一人で抱えない環境を整えています。</p></div></div>
+          <div class="faq-item"><button class="faq-q"><span class="faq-q-icon">Q</span>AIサポートとはどのようなものですか？<span class="faq-arrow">▼</span></button><div class="faq-a"><p>専用タブレットを通じて、24時間いつでも相談できるチャット環境を提供します。人に話しにくい内容でも気軽に吐き出せる仕組みです。</p></div></div>
+        </div>
+      </div>
+      <div class="reveal">
+        <div class="faq-cat-title">費用・契約について</div>
+        <div class="faq-list">
+          <div class="faq-item"><button class="faq-q"><span class="faq-q-icon">Q</span>途中で退会することはできますか？<span class="faq-arrow">▼</span></button><div class="faq-a"><p>はい、可能です。無理な継続をお願いすることはありません。</p></div></div>
+          <div class="faq-item"><button class="faq-q"><span class="faq-q-icon">Q</span>追加料金がかかることはありますか？<span class="faq-arrow">▼</span></button><div class="faq-a"><p>個別相談やイベントなどはオプション料金となります。事前にご説明の上でご利用いただきます。</p></div></div>
+          <div class="faq-item"><button class="faq-q"><span class="faq-q-icon">Q</span>他のサービスと併用できますか？<span class="faq-arrow">▼</span></button><div class="faq-a"><p>はい、可能です。学習塾や医療機関などと併用しながら進めることもできます。</p></div></div>
+          <div class="faq-item"><button class="faq-q"><span class="faq-q-icon">Q</span>相談だけの利用はできますか？<span class="faq-arrow">▼</span></button><div class="faq-a"><p>はい、個別相談のみのご利用も可能です。まずはお気軽にご相談ください。</p></div></div>
+        </div>
       </div>
     </div>
   </div>
@@ -548,6 +623,7 @@ const sp=document.getElementById('sparkles');
 for(let i=0;i<24;i++){const el=document.createElement('div');const s=3+Math.random()*5;el.className='sparkle';el.style.cssText=`left:${Math.random()*100}%;top:${Math.random()*80}%;width:${s}px;height:${s}px;--d:${2+Math.random()*4}s;--dl:${Math.random()*5}s;`;sp.appendChild(el);}
 const obs=new IntersectionObserver((entries)=>{entries.forEach((e,i)=>{if(e.isIntersecting){setTimeout(()=>e.target.classList.add('visible'),i*65);obs.unobserve(e.target);}});},{threshold:0.08});
 document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+document.querySelectorAll('.svc-tab').forEach(tab=>{tab.addEventListener('click',()=>{document.querySelectorAll('.svc-tab').forEach(t=>t.classList.remove('active'));document.querySelectorAll('.svc-panel').forEach(p=>p.classList.add('hidden'));tab.classList.add('active');document.getElementById('tab-'+tab.dataset.tab).classList.remove('hidden');});});
 document.querySelectorAll('.faq-q').forEach(btn=>{btn.addEventListener('click',()=>{const item=btn.closest('.faq-item');const isOpen=item.classList.contains('open');document.querySelectorAll('.faq-item.open').forEach(i=>i.classList.remove('open'));if(!isOpen)item.classList.add('open');});});
 document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
 </script>
